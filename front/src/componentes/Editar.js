@@ -77,7 +77,7 @@ class Editar extends React.Component {
         return (  
             <div className="card">
             <div className="card-header">
-                <h2>Editar</h2>
+                <h2>Modificar Articulo</h2>
             </div>
             <div className="card-body">
             <form onSubmit={this.enviarDatos}>

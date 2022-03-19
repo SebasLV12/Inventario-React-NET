@@ -72,7 +72,7 @@ class Crear extends React.Component {
         return (
             <div className="card">
                 <div className="card-header">
-                    <h2>Agregar articulo</h2>
+                    <h2>Insertar articulo</h2>
                 </div>
                 <div className="card-body">
                     <form onSubmit={this.enviarDatos}>

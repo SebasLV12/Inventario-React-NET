@@ -3,6 +3,7 @@ import './App.css';
 import Listar from "./componentes/Listar";
 import Crear from './componentes/Crear';
 import Editar from './componentes/Editar';
+import Eliminar from './componentes/Eliminar';
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import {Link} from "react-router-dom";
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/" component={Listar}></Route>
       <Route path="/crear" component={Crear}></Route>
       <Route path="/editar/:id" component={Editar}></Route>
+      <Route path="/eliminar/:id" component={Eliminar}></Route>
     </div>
     </Router>
     </div>
