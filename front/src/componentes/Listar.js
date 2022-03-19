@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import api from '../servicios/api';
-import './Listar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash, faSearch } from '@fortawesome/free-solid-svg-icons';
 class Listar extends React.Component {
@@ -18,30 +17,27 @@ class Listar extends React.Component {
         fetch(api)
             .then(respuesta => respuesta.json())
             .then((datosRespuesta) => {
-                console.log(datosRespuesta)
                 this.setState({ datosCargados: true, inventarios: datosRespuesta, inventarioInicial: datosRespuesta })
             })
             .catch(console.log)
     }
     BorrarRegistro = (id) => {
-        console.log(id);
-        fetch(api + "/" + id, {
-            method: 'DELETE'
-        }
+
+        fetch(api + "/" + id,
+            {
+                method: 'DELETE'
+            }
         )
             .then(respuesta => respuesta.json())
             .then((datosRespuesta) => {
-                console.log(datosRespuesta)
                 this.cargarDatos();
             })
             .catch(console.log)
 
     }
     cambioValor = async (e) => {
-
         e.persist()
         await this.setState({ busquedad: e.target.value })
-        console.log(this.state.busquedad)
         this.filtrar();
     }
     filtrar = () => {
@@ -65,11 +61,11 @@ class Listar extends React.Component {
                     <div className='container mt-2'>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Buscar por nombre" aria-label="Recipient's username" aria-describedby="basic-addon2"
-                            className="form-control inputBuscar"
-                            value={busquedad}
-                            onChange={this.cambioValor}
+                                className="form-control inputBuscar"
+                                value={busquedad}
+                                onChange={this.cambioValor}
                             />
-                                <span class="input-group-text" id="basic-addon2"><FontAwesomeIcon icon={faSearch} /></span>
+                            <span class="input-group-text" id="basic-addon2"><FontAwesomeIcon icon={faSearch} /></span>
                         </div>
                     </div>
                     <div className="container mt-4">
@@ -96,10 +92,10 @@ class Listar extends React.Component {
                                             <td>
                                                 <div className="btn-group" role="group" aria-label="">
                                                     <Link className="btn btn-warning" to={"/editar/" + inventario.id}><FontAwesomeIcon icon={faPen} />  Editar</Link>
-                                                    <Link className="btn btn-danger" to={"/eliminar/" + inventario.id}><FontAwesomeIcon icon={faTrash} /> Borrar 1</Link>
-                                                    <button type="button" className="btn btn-danger" onClick={() => this.BorrarRegistro(inventario.id)}>
+                                                    <Link className="btn btn-danger" to={"/eliminar/" + inventario.id}><FontAwesomeIcon icon={faTrash} />Eliminar</Link>
+                                                    {/* <button type="button" className="btn btn-danger" onClick={() => this.BorrarRegistro(inventario.id)}>
                                                         <FontAwesomeIcon icon={faTrash} /> Borrar
-                                                    </button>
+                                                    </button> */}
                                                 </div>
                                             </td>
                                         </tr>

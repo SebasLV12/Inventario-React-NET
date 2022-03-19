@@ -14,15 +14,12 @@ class Editar extends React.Component {
         return this.state.errores.indexOf(elemento) !== -1;
     }
     cambioValor=(e)=>{
-    
         const state=this.state.inventario;
         state[e.target.name]=e.target.value;
         this.setState({inventario:state});
-
     }
     enviarDatos=(e)=>{
         e.preventDefault();
-        console.log("form enviado")
         const{id,codigo,nombre,descripcion,cantidad}=this.state.inventario;
         var errores = [];
         if (!codigo) errores.push("error_nombre");
@@ -39,7 +36,7 @@ class Editar extends React.Component {
             descripcion:descripcion,
             cantidad:cantidad
         }
-        console.log(datosEnviar)
+
         fetch(api+"/"+id, {
             method: 'PUT',
             headers:{
@@ -50,19 +47,15 @@ class Editar extends React.Component {
         })
             .then(respuesta => respuesta.json())
             .then((datosRespuesta) => {
-
-                console.log(datosRespuesta)
                 this.props.history.push("/");
             })
             .catch(console.log)
     }
     componentDidMount(){
-        console.log(this.props.match.params.id);
-
         fetch(api+"/"+this.props.match.params.id)
         .then(respuesta => respuesta.json())
         .then((datosRespuesta) => {
-            console.log(datosRespuesta)
+
             this.setState({
                  datosCargados: true,
                  inventario:datosRespuesta

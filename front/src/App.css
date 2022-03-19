@@ -6,15 +6,13 @@
   height: 100%;
 }
 
-
 .App-link {
   color: #61dafb;
 }
 .barra{
   background-color: rgb(36, 36, 36);
-
 }
-.tituloB{
+.titulo{
   color: rgb(255, 255, 255);
   padding: 10px;
   text-decoration: none;
@@ -22,4 +20,26 @@
   font-size: 20px;
   margin-left:10%;
 }
-
+.encabezado{
+  background-color: rgb(51, 51, 51);
+  border-bottom: solid 5px rgb(133, 0, 27);
+  color: white;
+}
+.botones{
+  
+  background-color: black;
+}
+.table{
+  text-align: center;
+  
+}
+.box{
+  padding: 10px;
+ 
+  background-color: white;
+  border-color: rgb(179, 179, 179);
+  border-width: 1px 1px 1px;
+  border-style: solid ;
+  border-radius: 5px;
+  
+}

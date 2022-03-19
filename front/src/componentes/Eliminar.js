@@ -11,16 +11,15 @@ class Eliminar extends React.Component {
             inventario: [],
         }
     }
-    cambioValor=(e)=>{
-    
-        const state=this.state.inventario;
-        state[e.target.name]=e.target.value;
-        this.setState({inventario:state});
+    cambioValor = (e) => {
+
+        const state = this.state.inventario;
+        state[e.target.name] = e.target.value;
+        this.setState({ inventario: state });
 
     }
     BorrarRegistro = (e) => {
-        // e.preventDefault();
-        // console.log("form enviado")
+
         const { id, codigo, nombre, descripcion, cantidad } = this.state.inventario;
 
         var datosEnviar = {
@@ -30,26 +29,21 @@ class Eliminar extends React.Component {
             descripcion: descripcion,
             cantidad: cantidad
         }
-        console.log(datosEnviar)
-        console.log(id);
+
         fetch(api + "/" + id, {
             method: 'DELETE'
         }
         )
             .then(respuesta => respuesta.json())
             .then((datosRespuesta) => {
-                console.log(datosRespuesta)
                 this.props.history.push("/");
             })
             .catch(console.log)
     }
     componentDidMount() {
-        console.log(this.props.match.params.id);
-
         fetch(api + "/" + this.props.match.params.id)
             .then(respuesta => respuesta.json())
             .then((datosRespuesta) => {
-                console.log(datosRespuesta)
                 this.setState({
                     datosCargados: true,
                     inventario: datosRespuesta
@@ -99,7 +93,7 @@ class Eliminar extends React.Component {
                             </div>
                             <p className="mt-2">¿Estas seguro de que deseas borrar este artículo?</p>
                             <div className="btn-group " role="group" aria-label="">
-                                
+
                                 <button type="button" className="btn btn-danger" onClick={() => this.BorrarRegistro(inventario.id)}>
                                     <FontAwesomeIcon icon={faTrash} /> Borrar
                                 </button>
