@@ -1,13 +1,22 @@
 ## CRUD React y ASP NET Core
+Autor: Robert Sebastian Lezama Vásquez
 ___
-## Robert Sebastian Lezama
-carpeta "front" tiene la al r
-car .net
+### Listado de Herramientas
+FrontEnd
+-Html
+-CSS 
+-bootstrap Versión:5.1.3
+-Javascript
+-React Versión: 17.0.2
 
-proced run ront
+BackEnd
+-ASP .NET Core Versión:5.0
 
-entrar y ponte npm install
+Data Base
+-IIS Server
+-MS SQL SERVER
 
-prin back
+IDE
+-Visual Studio
+-VS Code
 
--net menu > djl >inpurt
