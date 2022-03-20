@@ -59,13 +59,13 @@ class Listar extends React.Component {
             return (
                 <div className="box">
                     <div className='container mt-2'>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Buscar por nombre" aria-label="Recipient's username" aria-describedby="basic-addon2"
+                        <div className="input-group mb-3">
+                            <input type="text"  placeholder="Buscar por nombre" aria-label="Recipient's username" aria-describedby="basic-addon2"
                                 className="form-control inputBuscar"
                                 value={busquedad}
                                 onChange={this.cambioValor}
                             />
-                            <span class="input-group-text" id="basic-addon2"><FontAwesomeIcon icon={faSearch} /></span>
+                            <span className="input-group-text" id="basic-addon2"><FontAwesomeIcon icon={faSearch} /></span>
                         </div>
                     </div>
                     <div className="container mt-4">
@@ -91,7 +91,7 @@ class Listar extends React.Component {
                                             <td>{inventario.cantidad}</td>
                                             <td>
                                                 <div className="btn-group" role="group" aria-label="">
-                                                    <Link className="btn btn-warning" to={"/editar/" + inventario.id}><FontAwesomeIcon icon={faPen} />  Editar</Link>
+                                                    <Link className="btn btn-warning" to={"/editar/" + inventario.id}><FontAwesomeIcon icon={faPen} />Editar</Link>
                                                     <Link className="btn btn-danger" to={"/eliminar/" + inventario.id}><FontAwesomeIcon icon={faTrash} />Eliminar</Link>
                                                 </div>
                                             </td>
