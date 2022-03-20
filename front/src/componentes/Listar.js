@@ -93,9 +93,6 @@ class Listar extends React.Component {
                                                 <div className="btn-group" role="group" aria-label="">
                                                     <Link className="btn btn-warning" to={"/editar/" + inventario.id}><FontAwesomeIcon icon={faPen} />  Editar</Link>
                                                     <Link className="btn btn-danger" to={"/eliminar/" + inventario.id}><FontAwesomeIcon icon={faTrash} />Eliminar</Link>
-                                                    {/* <button type="button" className="btn btn-danger" onClick={() => this.BorrarRegistro(inventario.id)}>
-                                                        <FontAwesomeIcon icon={faTrash} /> Borrar
-                                                    </button> */}
                                                 </div>
                                             </td>
                                         </tr>
