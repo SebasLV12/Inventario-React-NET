@@ -72,7 +72,7 @@ Con esto se descargaran las dependencias necesarias para poder ejecutar nuestra 
 
 Por ultimo, ejecutamos el siguiente comando, para ejecutar nuestra aplicacion en React.
 
-    npm run start
+    -npm run start
 
 
 
